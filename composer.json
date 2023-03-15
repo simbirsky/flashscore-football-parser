@@ -1,0 +1,36 @@
+{
+    "name": "simbirskiy/flashscore-football-parser",
+    "description": "Package for parsing football information from flashscore.com pages. Data representation in json format.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mihail Simbirskiy",
+            "email": "simbirsky@bk.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^5.7.7",
+        "pestphp/pest": "^1.22",
+        "symfony/var-dumper": "^6.2"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Simbirskiy\\FlashscoreParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
