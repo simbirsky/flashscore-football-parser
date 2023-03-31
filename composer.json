@@ -15,7 +15,8 @@
     "require-dev": {
         "vimeo/psalm": "^5.7.7",
         "pestphp/pest": "^1.22",
-        "symfony/var-dumper": "^6.2"
+        "symfony/var-dumper": "^6.2",
+        "friendsofphp/php-cs-fixer": "^3.15"
     },
     "minimum-stability": "stable",
     "autoload": {

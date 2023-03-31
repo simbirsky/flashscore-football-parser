@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Tests\FakeData\Pages\Main\Feed\FeedTodayFakeData;
 use Simbirskiy\FlashscoreParser\Pages\Main\Feed\Feed;
+use Tests\FakeData\Pages\Main\Feed\FeedTodayFakeData;
 
 test('successful parsed feed data', function () {
     $fakeData = new FeedTodayFakeData();
