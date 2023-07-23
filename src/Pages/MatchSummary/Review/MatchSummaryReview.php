@@ -5,7 +5,7 @@ namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review;
 use Simbirskiy\FlashscoreParser\Pages\Main\Feed\KeyValue;
 use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\GoalsValue;
 use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\MinuteValue;
-use Simbirskiy\FlashscoreParser\Response\Content;
+use Simbirskiy\FlashscoreParser\ResponseContent\Content;
 
 final class MatchSummaryReview
 {

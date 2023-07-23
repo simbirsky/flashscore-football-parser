@@ -2,7 +2,7 @@
 
 namespace Simbirskiy\FlashscoreParser\Pages\Main\Feed;
 
-use Simbirskiy\FlashscoreParser\Response\Content;
+use Simbirskiy\FlashscoreParser\ResponseContent\Content;
 
 /**
  * Parsing feed data.
