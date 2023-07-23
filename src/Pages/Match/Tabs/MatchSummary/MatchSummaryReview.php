@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review;
+namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review;
 
 use Simbirskiy\FlashscoreParser\Pages\Main\Feed\KeyValue;
-use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\GoalsValue;
-use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\MinuteValue;
+use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\Types\GoalsValue;
+use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\Types\MinuteValue;
 use Simbirskiy\FlashscoreParser\ResponseContent\Content;
 
 final class MatchSummaryReview

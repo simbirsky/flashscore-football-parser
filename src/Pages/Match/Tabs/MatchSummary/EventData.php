@@ -1,11 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
+namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review;
 
-namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review;
-
-use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\GoalsValue;
-use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\MinuteValue;
+use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\Types\GoalsValue;
+use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\Types\MinuteValue;
 
 final class EventData
 {

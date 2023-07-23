@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\MatchSummaryReview;
+use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\MatchSummaryReview;
 use Tests\FakeData\Pages\MatchSummary\MatchSummaryFakeData;
 
 test('successful parsed match data', function () {

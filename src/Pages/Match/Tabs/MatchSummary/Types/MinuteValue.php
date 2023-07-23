@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types;
+namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Tabs\Review\Types;
 
 use DomainException;
 
