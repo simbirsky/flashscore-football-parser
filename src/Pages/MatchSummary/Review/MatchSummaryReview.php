@@ -1,12 +1,11 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review;
 
 use Simbirskiy\FlashscoreParser\Pages\Main\Feed\KeyValue;
 use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\GoalsValue;
 use Simbirskiy\FlashscoreParser\Pages\MatchSummary\Review\Types\MinuteValue;
+use Simbirskiy\FlashscoreParser\Response\Content;
 
 final class MatchSummaryReview
 {
@@ -24,10 +23,12 @@ final class MatchSummaryReview
     {
         $res = [];
 
-        foreach ($this->getParsedEvents() as $event) {
+        $content = new Content($this->content);
+
+        foreach ($content->asKeyValue() as $event) {
             if (str_contains(array_keys($event)[0], '~III')) {
                 /** @var int<0, max> $minute */
-                $minute     = (int) str_replace('\'', '', $event['IB']);
+                $minute = (int) str_replace('\'', '', $event['IB']);
 
                 /** @var int<0, max> $team1GoalsValue */
                 $team1GoalsValue = (int) ($event['INX'] ?? 0);
@@ -48,55 +49,5 @@ final class MatchSummaryReview
         }
 
         return $res;
-    }
-
-    /**
-     * Get parsed key-value array for each event.
-     *
-     * @return array<array-key, array<string, string>>
-     */
-    private function getParsedEvents(): array
-    {
-        $dataList = [];
-
-        foreach ($this->getParsedKeyValueList() as $item) {
-            $key   = $item->getKey();
-            $value = $item->getValue();
-
-            if ($item->isNewSectionMatch()) {
-                $dataList[] = [
-                    $key => $value,
-                ];
-            } else {
-                $lastKey = array_key_last($dataList);
-
-                if (is_null($lastKey)) {
-                    $dataList[] = [$key => $value];
-                } else {
-                    $dataList[$lastKey] = array_merge(
-                        $dataList[$lastKey] ?? [],
-                        [$key => $value]
-                    );
-                }
-            }
-        }
-
-        return $dataList;
-    }
-
-    /**
-     * Get parsed key÷value array. Flashscore gives data in key÷value format separated by ¬ in one line.
-     *
-     * @return array<array-key, KeyValue>
-     */
-    private function getParsedKeyValueList(): array
-    {
-        $keyValueList = [];
-
-        foreach (explode('¬', $this->content) as $keyValueString) {
-            $keyValueList[] = new KeyValue($keyValueString);
-        }
-
-        return $keyValueList;
     }
 }

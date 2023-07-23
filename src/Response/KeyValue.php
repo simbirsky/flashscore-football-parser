@@ -1,10 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
+namespace Simbirskiy\FlashscoreParser\Response;
 
-namespace Simbirskiy\FlashscoreParser\Pages\Main\Feed;
-
-class KeyValue
+final class KeyValue
 {
     public function __construct(private readonly string $keyValue)
     {
