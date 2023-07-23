@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace Tests\FakeData\Pages\MatchSummary;
+namespace Tests\FakeData\Pages\Match\Tabs\MatchSummary;
 
 use Tests\FakeData\FakeData;
 
