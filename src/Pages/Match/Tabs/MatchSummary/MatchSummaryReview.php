@@ -1,8 +1,9 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary;
 
-use Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary\EventData;
 use Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary\Types\GoalsValue;
 use Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary\Types\MinuteValue;
 use Simbirskiy\FlashscoreParser\ResponseContent\Content;

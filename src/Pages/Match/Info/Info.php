@@ -34,8 +34,8 @@ final class Info
             'header' => [
                 'tournament' => [
                     'link' => $data['header']['tournament']['link'] ?? throw new Exception("Doesn't exists window.environment.header.tournament.link on page"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 }
