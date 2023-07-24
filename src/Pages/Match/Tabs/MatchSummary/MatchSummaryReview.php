@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary;
 
+use Exception;
 use Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary\Types\GoalsValue;
 use Simbirskiy\FlashscoreParser\Pages\Match\Tabs\MatchSummary\Types\MinuteValue;
 use Simbirskiy\FlashscoreParser\ResponseContent\Content;
@@ -29,7 +30,7 @@ final class MatchSummaryReview
         foreach ($content->asKeyValue() as $event) {
             if (str_contains(array_keys($event)[0], '~III')) {
                 /** @var int<0, max> $minute */
-                $minute = (int) str_replace('\'', '', $event['IB']);
+                $minute = (int) str_replace('\'', '', $event['IB'] ?? $event['IBX'] ?? throw new Exception("Wrong minutes parsing"));
 
                 /** @var int<0, max> $team1GoalsValue */
                 $team1GoalsValue = (int) ($event['INX'] ?? 0);
