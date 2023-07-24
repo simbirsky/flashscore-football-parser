@@ -40,8 +40,8 @@ final class MatchSummaryReview
 
                 $res[] = (new EventData(
                     eventId: $event['~III'] ?? $event['~IIIX'] ?? throw new Exception('Wrong event id'),
-                    eventType: EventType::tryFrom($event['IE']) ?? EventType::OTHER,
-                    eventInitiator: EventInitiator::tryFrom($event['IA']) ?? throw new \DomainException('Not specified which team the event belongs to'),
+                    eventType: EventType::tryFrom($event['IE'] ?? $event['IEX']) ?? EventType::OTHER,
+                    eventInitiator: EventInitiator::tryFrom($event['IA'] ?? $event['IAX']) ?? throw new \DomainException('Not specified which team the event belongs to'),
                     minute: new MinuteValue($minute),
                     team1Goals: new GoalsValue($team1GoalsValue),
                     team2Goals: new GoalsValue($team2GoalsValue),
